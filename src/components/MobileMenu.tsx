@@ -1,0 +1,68 @@
+'use client'
+
+import { Menus } from '@/data'
+import { sidebarVariant } from '@/lib/variants'
+import { motion, useCycle } from 'motion/react'
+import { useEffect, useState } from 'react'
+import { MenuToggleButton } from './MenuToggleButton'
+import { MobileMenuItem } from './MobileMenuItem'
+import { Button } from './ui/button'
+
+export const MobileMenu = () => {
+  const [isMenuOpen, toggleMenu] = useCycle(false, true)
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.classList.remove('overflow-hidden')
+      setOpenAccordion(null)
+    } else {
+      document.body.classList.add('overflow-hidden')
+    }
+  }, [isMenuOpen])
+
+  const handleToggleMenu = () => {
+    toggleMenu()
+    if (isMenuOpen) {
+      setOpenAccordion(null)
+    }
+  }
+
+  return (
+    <motion.div
+      initial={false}
+      animate={isMenuOpen ? 'open' : 'closed'}
+      className="w-full"
+    >
+      <MenuToggleButton toggle={handleToggleMenu} />
+
+      <motion.div
+        className={`absolute top-17 right-0 left-0 h-[calc(100vh-68px)] w-full origin-top bg-white drop-shadow-transparent ${
+          isMenuOpen ? 'overflow-y-auto' : 'pointer-events-none'
+        }`}
+        variants={sidebarVariant}
+      >
+        <div className="mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6 sm:w-[90%] md:w-full">
+          {Menus.map((menu) => (
+            <MobileMenuItem
+              menu={menu}
+              key={menu.name}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+            />
+          ))}
+
+          <Button
+            variant="ghost"
+            size="lg"
+            className="justify-start rounded-none px-0 text-lg font-semibold hover:bg-transparent hover:text-black"
+          >
+            Login
+          </Button>
+
+          <Button className="mt-2 self-start rounded-xl">Get Started</Button>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
