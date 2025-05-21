@@ -2,7 +2,7 @@
 
 import { Menus } from '@/data'
 import { sidebarVariant } from '@/lib/variants'
-import { motion, useCycle } from 'motion/react'
+import { AnimatePresence, motion, useCycle } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { MenuToggleButton } from './MenuToggleButton'
 import { MobileMenuItem } from './MobileMenuItem'
@@ -42,26 +42,59 @@ export const MobileMenu = () => {
         }`}
         variants={sidebarVariant}
       >
-        <div className="mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6 sm:w-[90%] md:w-full">
-          {Menus.map((menu) => (
-            <MobileMenuItem
-              menu={menu}
-              key={menu.name}
-              openAccordion={openAccordion}
-              setOpenAccordion={setOpenAccordion}
-            />
-          ))}
+        <AnimatePresence mode="wait">
+          {isMenuOpen && (
+            <motion.div
+              key="mobile-menu-content"
+              initial={{
+                opacity: 0,
+                y: -100,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 30,
+                  delay: 0.3,
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: -100,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 40,
+                  duration: 0.2,
+                },
+              }}
+              className="mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6 sm:w-[90%] md:w-full"
+            >
+              {Menus.map((menu) => (
+                <MobileMenuItem
+                  menu={menu}
+                  key={menu.name}
+                  openAccordion={openAccordion}
+                  setOpenAccordion={setOpenAccordion}
+                />
+              ))}
 
-          <Button
-            variant="ghost"
-            size="lg"
-            className="justify-start rounded-none px-0 text-lg font-semibold hover:bg-transparent hover:text-black"
-          >
-            Login
-          </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="justify-start rounded-none px-0 text-lg font-semibold hover:bg-transparent hover:text-black"
+              >
+                Login
+              </Button>
 
-          <Button className="mt-2 self-start rounded-xl">Get Started</Button>
-        </div>
+              <Button className="mt-2 self-start rounded-xl">
+                Get Started
+              </Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </motion.div>
   )
