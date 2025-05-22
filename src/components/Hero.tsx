@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 
 export const Hero = () => {
   return (
-    <div className="contain space-y-15 py-15">
+    <div className="contain space-y-15 pt-15 pb-15 lg:pb-24">
       <div className="flex flex-col items-start gap-6 pr-7 sm:max-w-[500px] md:max-w-full md:gap-10">
         <div className="rounded-3xl bg-[#ddd9fc] px-5 py-2">
           <p className="text-lg font-semibold tracking-tight">
@@ -41,7 +41,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="relative -z-10 aspect-video overflow-hidden rounded-lg border-4 border-[#ddd9fc] md:border-8">
+      <div className="relative aspect-video overflow-hidden rounded-lg border-4 border-[#ddd9fc] md:border-8">
         <Image
           src={'/images/hero-home1.webp'}
           className="object-cover"

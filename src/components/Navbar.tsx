@@ -48,7 +48,7 @@ export const Navbar = () => {
         transition={{
           duration: 0.2,
         }}
-        className="lg:bg-op sticky inset-0 flex h-17 items-center justify-center bg-white backdrop-blur-xs lg:bg-[#f5f5f7f3]"
+        className="lg:bg-op sticky inset-0 z-50 flex h-17 items-center justify-center bg-white backdrop-blur-xs lg:bg-[#f5f5f7f3]"
       >
         <nav className="contain flex h-11 w-full items-center justify-between px-5">
           <div className="flex items-center gap-x-18">
