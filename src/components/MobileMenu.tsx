@@ -70,7 +70,7 @@ export const MobileMenu = () => {
                   duration: 0.2,
                 },
               }}
-              className="mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6 sm:w-[90%] md:w-full"
+              className="contain mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6"
             >
               {Menus.map((menu) => (
                 <MobileMenuItem

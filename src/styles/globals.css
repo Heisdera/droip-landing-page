@@ -124,3 +124,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .contain {
+    @apply mx-auto px-5 min-[520px]:max-w-[490px] min-[580px]:max-w-[640px] md:max-w-[830px] lg:max-w-[1350px];
+  }
+}

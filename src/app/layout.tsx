@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${interSans.className} bg-[#f5f5f7] antialiased`}>
+      <body
+        className={`${interSans.className} bg-[#f5f5f7] tracking-tight antialiased`}
+      >
         <Navbar />
         {children}
       </body>
