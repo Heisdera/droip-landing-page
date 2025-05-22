@@ -166,3 +166,34 @@ export const firstSectionSteps: Step[] = [
     href: '#',
   },
 ]
+
+export const secondSectionSteps: Step[] = [
+  {
+    id: 'timeline',
+    title: 'Advanced interaction timeline',
+    description:
+      'Design smooth, multi-step animations with a timeline-based editor for complete control.',
+    imageUrl: '/images/second/Advanced-Interaction-timeline.webp',
+  },
+  {
+    id: 'timing',
+    title: 'Custom timing editor',
+    description:
+      'Fine-tune every interaction to deliver flawless performance by adjusting delays, durations, easing functions, and more.',
+    imageUrl: '/images/second/Custom-Timing-Editor.webp',
+  },
+  {
+    id: 'triggers',
+    title: 'Advanced triggers',
+    description:
+      'Trigger animations based on scrolling, hovering, page load, and more for a dynamic experience.',
+    imageUrl: '/images/second/Advanced-Triggers.webp',
+  },
+  {
+    id: 'precision',
+    title: 'Achieve limitless precision',
+    description:
+      'Create flawless, interactive designs visually with unmatched accuracy and finesse.',
+    imageUrl: '/images/second/Achieve-Limitless-Precision.webp',
+  },
+]

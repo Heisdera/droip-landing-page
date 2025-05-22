@@ -35,7 +35,7 @@ export default function CharacterRevealHeader({
   return (
     <p
       ref={paragraphElement}
-      className="flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter md:text-8xl"
+      className="flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter md:text-7xl"
     >
       {words.map((word, i) => {
         const start = i / words.length
