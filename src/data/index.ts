@@ -40,6 +40,13 @@ export type Step = {
   href?: string
 }
 
+export type Card = {
+  title: string
+  description: string
+  imageUrl: string
+  href: string
+}
+
 export const Menus: MenuItem[] = [
   {
     name: 'Home',
@@ -155,7 +162,6 @@ export const firstSectionSteps: Step[] = [
     description:
       'Ensure flawless responsiveness across all devices. Design with adaptive elements that adjust seamlessly to different screen sizes and resolutions.',
     imageUrl: '/images/first/auto-responsive-1.webp',
-    href: '#',
   },
   {
     id: 'efficiency',
@@ -163,7 +169,6 @@ export const firstSectionSteps: Step[] = [
     description:
       'Streamline your workflow with intuitive tools that simplify layout structuring. Save time while maintaining complete design accuracy and flexibility.',
     imageUrl: '/images/first/Designed-for-Efficiency.webp',
-    href: '#',
   },
 ]
 
@@ -195,5 +200,29 @@ export const secondSectionSteps: Step[] = [
     description:
       'Create flawless, interactive designs visually with unmatched accuracy and finesse.',
     imageUrl: '/images/second/Achieve-Limitless-Precision.webp',
+  },
+]
+
+export const thirdSectionContents: Card[] = [
+  {
+    title: 'Content Manager',
+    description:
+      'Handle dynamic data with the built-in content manager. Link data dynamically to any part of your website.',
+    imageUrl: '/images/third/CMS1.webp',
+    href: '#',
+  },
+  {
+    title: 'Media Manager',
+    description:
+      'Organize and edit all media assets, including SVGs, Lottie, and icons, with the built-in image and shape editor.',
+    imageUrl: '/images/third/Media-Manager.webp',
+    href: '#',
+  },
+  {
+    title: 'SEO',
+    description:
+      "Dynamically update SEO content across pages to optimize your website's search performance.",
+    imageUrl: '/images/third/dymanic-seo2-1.webp',
+    href: '#',
   },
 ]
