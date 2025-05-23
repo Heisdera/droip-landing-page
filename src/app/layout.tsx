@@ -11,6 +11,20 @@ const interSans = Inter({
 export const metadata: Metadata = {
   title: 'Droip | No-Code website builder for WordPress',
   description: 'Recreated with love by Raphael Wisdom Chidera',
+  icons: {
+    icon: [
+      {
+        url: 'https://droip.com/wp-content/uploads/2025/02/droip-favicon-150x150.webp',
+        sizes: '32x32',
+      },
+      {
+        url: 'https://droip.com/wp-content/uploads/2025/02/droip-favicon-300x300.webp',
+        sizes: '192x192',
+      },
+    ],
+    apple:
+      'https://droip.com/wp-content/uploads/2025/02/droip-favicon-300x300.webp',
+  },
 }
 
 export default function RootLayout({
@@ -20,18 +34,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link
-          rel="icon"
-          href="https://droip.com/wp-content/uploads/2025/02/droip-favicon-150x150.webp"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          href="https://droip.com/wp-content/uploads/2025/02/droip-favicon-300x300.webp"
-          sizes="192x192"
-        />
-      </head>
       <body
         className={`${interSans.className} bg-[#f5f5f7] tracking-tight antialiased`}
       >
