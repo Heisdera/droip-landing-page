@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import {
   animate,
   motion,
@@ -10,8 +11,10 @@ import { useEffect, useRef } from 'react'
 
 export default function CharacterRevealHeader({
   paragraph,
+  className,
 }: {
   paragraph: string
+  className?: string
 }) {
   const paragraphElement = useRef<HTMLParagraphElement>(null)
   const isInView = useInView(paragraphElement, {
@@ -35,7 +38,10 @@ export default function CharacterRevealHeader({
   return (
     <p
       ref={paragraphElement}
-      className="flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter md:text-7xl"
+      className={cn(
+        'flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter md:text-7xl',
+        className
+      )}
     >
       {words.map((word, i) => {
         const start = i / words.length

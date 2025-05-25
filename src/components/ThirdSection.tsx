@@ -25,7 +25,7 @@ export const ThirdSection = () => {
   }, [])
 
   return (
-    <div className="mb-[100vh] bg-black py-15 lg:py-24">
+    <div className="bg-black py-15 lg:py-24">
       <div className="contain">
         <p className="text-[44px] leading-[1.1] font-medium tracking-tighter text-white lg:max-w-[40%] lg:text-7xl">
           Scale your business with

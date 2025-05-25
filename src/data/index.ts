@@ -47,6 +47,12 @@ export type Card = {
   href: string
 }
 
+export type ImageCard = {
+  name: string
+  src: string
+  className: string
+}
+
 export const Menus: MenuItem[] = [
   {
     name: 'Home',
@@ -224,5 +230,38 @@ export const thirdSectionContents: Card[] = [
       "Dynamically update SEO content across pages to optimize your website's search performance.",
     imageUrl: '/images/third/dymanic-seo2-1.webp',
     href: '#',
+  },
+]
+
+export const fourthSectionImages: ImageCard[] = [
+  {
+    name: 'Creative Branding',
+    src: 'vertical-slider2.webp',
+    className: 'relative h-[101px] w-[93px] rounded-lg',
+  },
+  {
+    name: 'Healthcare Solutions',
+    src: 'vertical-slider4.webp',
+    className: 'relative h-[143px] w-[176px] rounded-lg',
+  },
+  {
+    name: 'Build Website From Scratch',
+    src: 'vertical-slider3.webp',
+    className: 'relative h-[259px] w-[235px] rounded-lg',
+  },
+  {
+    name: 'Generate Site Button',
+    src: 'vertical-slider1.webp',
+    className: 'relative h-[58px] w-[227px] rounded-lg',
+  },
+  {
+    name: 'User Login Form',
+    src: 'vertical-slider5.webp',
+    className: 'relative h-[188px] w-[180px] rounded-lg',
+  },
+  {
+    name: 'Creative Branding',
+    src: 'vertical-slider2.webp',
+    className: 'relative h-[131px] w-[103px] rounded-lg',
   },
 ]

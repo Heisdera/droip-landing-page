@@ -32,6 +32,8 @@ export const StepperImageRevealAccordion = ({
           {steps.map((step, index) => (
             <li key={step.id} className="relative">
               <button
+                title={activeIndex === index ? '' : 'Click to expand details'}
+                type="button"
                 onClick={() => handleIndexChange(index)}
                 className={cn(
                   'focus-visible:ring-primary flex w-full cursor-pointer items-start gap-3 rounded-md text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
