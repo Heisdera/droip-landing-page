@@ -62,13 +62,13 @@ export const FourthSection = () => {
 
   return (
     <div className="mb-[100vh] bg-white py-15 lg:py-24">
-      <div className="contain grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="contain relative grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <CharacterRevealHeader
           paragraph="Create pixel-perfect accuracy in the atomic level"
-          className="h-fit leading-[0.8]"
+          className="top-28 h-fit leading-[0.8] lg:sticky"
         />
 
-        <div className="space-y-4">
+        <div className="bottom-10 space-y-4 lg:sticky lg:self-end">
           <SpinningCircleIcon />
 
           <p className="text-lg">
