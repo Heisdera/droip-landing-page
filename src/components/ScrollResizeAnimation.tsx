@@ -46,12 +46,12 @@ export const ScrollResizeAnimation = memo(
           />
 
           {shouldShowOverlay && (
-            <motion.div className="pointer-events-none absolute inset-0 z-30 flex h-auto w-full flex-col items-center justify-center opacity-100">
-              <div className="relative h-full w-full rounded-lg border-2 border-dashed border-cyan-300">
-                <div className="absolute -top-1 -left-1 flex size-2 items-center justify-center rounded-full border-2 border-dashed border-cyan-300 bg-white"></div>
-                <div className="absolute -top-1 -right-1 flex size-2 items-center justify-center rounded-full border-2 border-dashed border-cyan-300 bg-white"></div>
-                <div className="absolute -bottom-1 -left-1 flex size-2 items-center justify-center rounded-full border-2 border-dashed border-cyan-300 bg-white"></div>
-                <div className="absolute -right-1 -bottom-1 flex size-2 items-center justify-center rounded-full border-2 border-dashed border-cyan-300 bg-white"></div>
+            <motion.div className="pointer-events-none absolute -inset-1 z-30 flex h-auto flex-col items-center justify-center opacity-100">
+              <div className="relative h-full w-full rounded-lg border-[3px] border-dashed border-cyan-300">
+                <div className="absolute -top-1 -left-1 flex size-2 items-center justify-center rounded-full border border-cyan-300 bg-white" />
+                <div className="absolute -top-1 -right-1 flex size-2 items-center justify-center rounded-full border border-cyan-300 bg-white" />
+                <div className="absolute -bottom-1 -left-1 flex size-2 items-center justify-center rounded-full border border-cyan-300 bg-white" />
+                <div className="absolute -right-1 -bottom-1 flex size-2 items-center justify-center rounded-full border border-cyan-300 bg-white" />
               </div>
             </motion.div>
           )}
