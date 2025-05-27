@@ -12,10 +12,18 @@ type CardProps = {
   current: number
   containerScrollValue: number
   isActive: boolean
+  isLastImage?: boolean
 }
 
 export const ScrollResizeAnimation = memo(
-  ({ image, range, current, containerScrollValue, isActive }: CardProps) => {
+  ({
+    image,
+    range,
+    current,
+    containerScrollValue,
+    isActive,
+    isLastImage,
+  }: CardProps) => {
     const cardContainer = useRef(null)
 
     const { scrollYProgress } = useScroll({
@@ -24,6 +32,7 @@ export const ScrollResizeAnimation = memo(
     })
 
     const scale = useTransform(scrollYProgress, range, [0.65, 1, 0.65])
+    const lastScale = useTransform(scrollYProgress, range, [0.85, 0.7, 0.4])
 
     // Check if current value matches container scroll value (with small tolerance for floating point precision)
     const shouldShowOverlay =
@@ -33,7 +42,7 @@ export const ScrollResizeAnimation = memo(
       <div ref={cardContainer} className="w-full">
         <motion.div
           style={{
-            scale,
+            scale: isLastImage ? lastScale : scale,
           }}
           className={cn('relative mx-auto', image.className)}
         >

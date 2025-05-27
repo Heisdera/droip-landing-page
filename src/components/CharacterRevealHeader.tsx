@@ -39,7 +39,7 @@ export default function CharacterRevealHeader({
     <p
       ref={paragraphElement}
       className={cn(
-        'flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter md:text-7xl',
+        'flex max-w-7xl flex-wrap py-2 text-5xl leading-[1] font-medium tracking-tighter whitespace-nowrap md:text-7xl',
         className
       )}
     >

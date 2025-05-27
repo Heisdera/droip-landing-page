@@ -1,3 +1,4 @@
+import { FifthSection } from '@/components/FifthSection'
 import { FirstSection } from '@/components/FirstSection'
 import { FourthSection } from '@/components/FourthSection'
 import { Hero } from '@/components/Hero'
@@ -12,6 +13,7 @@ export default function Home() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
+      <FifthSection />
     </main>
   )
 }

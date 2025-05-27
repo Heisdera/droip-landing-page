@@ -61,14 +61,14 @@ export const FourthSection = () => {
   }, [])
 
   return (
-    <div className="mb-[100vh] bg-white py-15 lg:py-24">
-      <div className="contain relative grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
+    <div className="bg-white pt-15 lg:pt-24">
+      <div className="contain grid gap-10 lg:grid-cols-[1.6fr_1fr_1fr]">
         <CharacterRevealHeader
           paragraph="Create pixel-perfect accuracy in the atomic level"
-          className="top-16 h-fit max-md:leading-[0.8] lg:sticky"
+          className="top-16 h-fit max-md:leading-[0.8] lg:sticky lg:mb-10"
         />
 
-        <div className="bottom-10 space-y-4 lg:sticky lg:self-end">
+        <div className="space-y-4 lg:sticky lg:mb-10 lg:self-end">
           <SpinningCircleIcon />
 
           <p className="text-lg">
@@ -86,11 +86,12 @@ export const FourthSection = () => {
 
         <div
           ref={containerRef}
-          className="sticky top-24 flex h-[130vh] items-center justify-center overflow-hidden lg:col-start-2 lg:row-start-1"
+          className="flex items-center justify-center lg:col-start-2 lg:row-start-1"
         >
           <div className="mx-auto flex max-w-[237px] flex-col items-center justify-center gap-4">
             {fourthSectionImages.map((image, i) => {
               const current = i * (1 / fourthSectionImages.length)
+              const isLastImage = i === fourthSectionImages.length - 1
 
               return (
                 <ScrollResizeAnimation
@@ -100,6 +101,7 @@ export const FourthSection = () => {
                   current={current}
                   containerScrollValue={containerScrollValue}
                   isActive={i === activeIndex}
+                  isLastImage={isLastImage}
                 />
               )
             })}
