@@ -1,8 +1,8 @@
 'use client'
 
 import { secondSectionSteps } from '@/data'
-import CharacterRevealHeader from './CharacterRevealHeader'
-import { StepperImageRevealAccordion } from './StepperImageRevealAccordion'
+import CharacterRevealHeader from '../CharacterRevealHeader'
+import { StepperImageRevealAccordion } from '../StepperImageRevealAccordion'
 
 export function SecondSection() {
   return (

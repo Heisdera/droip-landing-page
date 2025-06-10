@@ -6,9 +6,9 @@ import { ChevronRight } from 'lucide-react'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import CharacterRevealHeader from './CharacterRevealHeader'
-import { ScrollResizeAnimation } from './ScrollResizeAnimation'
-import SpinningCircleIcon from './SpinningCircleIcon'
+import CharacterRevealHeader from '../CharacterRevealHeader'
+import { ScrollResizeAnimation } from '../ScrollResizeAnimation'
+import SpinningCircleIcon from '../SpinningCircleIcon'
 
 export const FourthSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)

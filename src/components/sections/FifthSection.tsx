@@ -3,8 +3,8 @@
 import Lenis from 'lenis'
 import { motion, useScroll, useTransform, useSpring } from 'motion/react'
 import { useEffect, useRef } from 'react'
-import MovingThemesCard from './MovingThemesCard'
-import { GlowingCursor } from './cursor-glowing-effect/GlowingCursor'
+import MovingThemesCard from '../MovingThemesCard'
+import { GlowingCursor } from '../cursor-glowing-effect/GlowingCursor'
 
 export const FifthSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)

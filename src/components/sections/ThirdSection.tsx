@@ -4,7 +4,7 @@ import { thirdSectionContents } from '@/data'
 import Lenis from 'lenis'
 import { useScroll } from 'motion/react'
 import { useEffect, useRef } from 'react'
-import { ThirdSectionContentCard } from './ThirdSectionContentCard'
+import { ThirdSectionContentCard } from '../ThirdSectionContentCard'
 
 export const ThirdSection = () => {
   const contentContainer = useRef(null)
