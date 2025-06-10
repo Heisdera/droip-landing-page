@@ -73,7 +73,7 @@ export const FifthSection = () => {
       style={{
         backgroundColor,
       }}
-      className="relative py-0 pb-15 lg:pb-10"
+      className="relative overflow-hidden py-0 pb-15 lg:pb-10"
     >
       <GlowingCursor containerRef={containerRef} />
 
