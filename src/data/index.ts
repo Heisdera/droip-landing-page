@@ -1,3 +1,4 @@
+import { DollarBag, GridIcon, GuardIcon, LinkIcon } from '@/components/icons'
 import {
   BellDot,
   Bolt,
@@ -12,7 +13,7 @@ import {
   ShoppingBag,
   TriangleAlert,
 } from 'lucide-react'
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
+import { ForwardRefExoticComponent, JSX, RefAttributes } from 'react'
 
 export type MenuItem =
   | {
@@ -51,6 +52,18 @@ export type ImageCard = {
   name: string
   src: string
   className: string
+}
+
+export interface IconClassProps {
+  className?: string
+}
+
+export type gridCard = {
+  title?: string
+  description?: string
+  icon?: ({ className }: IconClassProps) => JSX.Element
+  className?: string
+  src?: string
 }
 
 export const Menus: MenuItem[] = [
@@ -263,5 +276,45 @@ export const fourthSectionImages: ImageCard[] = [
     name: 'Creative Branding',
     src: 'vertical-slider2.webp',
     className: 'relative h-[131px] w-[103px] rounded-lg',
+  },
+]
+
+export const sixthSectionContents: gridCard[] = [
+  {
+    src: '/images/sixth/PanzerV3.mp4',
+    className:
+      'min-h-[200px] overflow-hidden rounded-3xl bg-white pl-10 md:col-span-2 md:row-start-2 md:pl-8 lg:row-start-1 lg:col-start-2 lg:pl-16',
+  },
+  {
+    title: 'More control, less reliance',
+    description:
+      'Get complete control over your website’s performance and aesthetics without extra plugins.',
+    className:
+      'flex min-h-[200px] flex-col justify-between space-y-6 overflow-hidden rounded-3xl bg-white p-6 lg:p-8',
+    icon: GridIcon,
+  },
+  {
+    title: 'Cost-effective',
+    description:
+      'Reduce ongoing costs with built-in tools that let you scale seamlessly without extra expenses.',
+    className:
+      'flex min-h-[200px] flex-col justify-between space-y-6 overflow-hidden rounded-3xl bg-white p-6 lg:p-8',
+    icon: DollarBag,
+  },
+  {
+    title: 'Simplified workflow',
+    description:
+      'With everything built in, your design process is streamlined, efficient, and hassle-free.',
+    className:
+      'flex min-h-[200px] flex-col justify-between space-y-6 overflow-hidden rounded-3xl bg-white p-6 lg:p-8',
+    icon: LinkIcon,
+  },
+  {
+    title: 'Streamlined & secure',
+    description:
+      'Fewer external plugins mean fewer vulnerabilities, keeping your site secure and lightweight.',
+    className:
+      'flex min-h-[200px] flex-col justify-between space-y-6 overflow-hidden rounded-3xl bg-white p-6 lg:p-8',
+    icon: GuardIcon,
   },
 ]
