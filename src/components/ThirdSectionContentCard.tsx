@@ -45,7 +45,7 @@ export const ThirdSectionContentCard = ({
           backgroundColor,
           scale,
         }}
-        className="relative -top-[25%] flex h-[740px] w-full flex-col gap-[20px] rounded-xl max-md:p-5 max-sm:max-h-[555px] md:aspect-video md:h-[80vh] md:gap-[50px] md:rounded-[28px] md:py-12 md:pl-12"
+        className="relative -top-[25%] flex w-full flex-col gap-[20px] rounded-xl max-md:max-h-[510px] max-md:p-5 max-sm:max-h-[555px] md:aspect-video md:h-[80vh] md:gap-[50px] md:rounded-[28px] md:py-12 md:pl-12"
       >
         <div className="grid h-full gap-10 max-md:grid-rows-[0.5fr_0.5fr_1fr] md:grid-cols-[0.5fr_1fr] lg:gap-20">
           <div className="flex flex-col gap-y-10 md:-mb-20 md:justify-between">
