@@ -3,6 +3,7 @@ import { EighthSection } from '@/components/sections/EighthSection'
 import { FifthSection } from '@/components/sections/FifthSection'
 import { FirstSection } from '@/components/sections/FirstSection'
 import { FourthSection } from '@/components/sections/FourthSection'
+import { NinthSection } from '@/components/sections/NinthSection'
 import { SecondSection } from '@/components/sections/SecondSection'
 import { SeventhSection } from '@/components/sections/SeventhSection'
 import { SixthSection } from '@/components/sections/SixthSection'
@@ -20,6 +21,7 @@ export default function Home() {
       <SixthSection />
       <SeventhSection />
       <EighthSection />
+      <NinthSection />
     </main>
   )
 }

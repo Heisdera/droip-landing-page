@@ -374,3 +374,79 @@ export const eighthSectionIcons = [
   LiveChatIcon,
   ReCaptchaIcon,
 ]
+
+export const ninthSectionContents: {
+  title: string
+  description: string
+  imageSrc: string
+  className: string
+}[] = [
+  {
+    title: 'Seamless migration',
+    description:
+      'Migrate your existing design seamlessly into Droip with just a click of a button!',
+    imageSrc: '/images/ninth/design1.webp',
+    className: '',
+  },
+  {
+    title: 'Form builder',
+    description:
+      'Build forms for any purpose and effortlessly manage form data natively.',
+    imageSrc: '/images/ninth/design-1.webp',
+    className: '',
+  },
+  {
+    title: 'CSS preview',
+    description: 'See real-time CSS changes and fine-tune styles as you need.',
+    imageSrc: '/images/ninth/design8.webp',
+    className: '',
+  },
+  {
+    title: 'Unlimited breakpoints',
+    description:
+      'Achieve pixel-perfect responsiveness across all devices with unlimited breakpoints.',
+    imageSrc: '/images/ninth/design1-1.webp',
+    className: '',
+  },
+  {
+    title: 'Figma to droip',
+    description:
+      'Seamlessly import Figma designs into Droip and bring your vision to life in no time.',
+    imageSrc: '/images/ninth/design2.webp',
+    className: '',
+  },
+  {
+    title: 'Code element',
+    description:
+      'Add custom HTML, CSS, and JavaScript to an element for extended functionality.',
+    imageSrc: '/images/ninth/design4.webp',
+    className: '',
+  },
+  {
+    title: 'Pop-up builder',
+    description:
+      'Design engaging pop-ups that captivate visitors and boost conversions.',
+    imageSrc: '/images/ninth/design5.webp',
+    className: '',
+  },
+  {
+    title: 'Autosave',
+    description:
+      'Never lose progress—your work is automatically saved as you build.',
+    imageSrc: '/images/ninth/design7.webp',
+    className: '',
+  },
+  {
+    title: 'Global style manager',
+    description:
+      'Maintain consistent branding with centralized style controls.',
+    imageSrc: '/images/ninth/design6.webp',
+    className: '',
+  },
+  {
+    title: 'Droip AI',
+    description: 'Harness AI to accelerate your workflow and creative process.',
+    imageSrc: '/images/ninth/create-with-ai.webp',
+    className: '',
+  },
+]
