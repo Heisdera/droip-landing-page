@@ -1,4 +1,5 @@
 import { Hero } from '@/components/Hero'
+import { EighthSection } from '@/components/sections/EighthSection'
 import { FifthSection } from '@/components/sections/FifthSection'
 import { FirstSection } from '@/components/sections/FirstSection'
 import { FourthSection } from '@/components/sections/FourthSection'
@@ -18,6 +19,7 @@ export default function Home() {
       <FifthSection />
       <SixthSection />
       <SeventhSection />
+      <EighthSection />
     </main>
   )
 }
