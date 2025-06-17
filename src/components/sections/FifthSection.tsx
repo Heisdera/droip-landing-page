@@ -1,8 +1,5 @@
-'use client'
-
-import Lenis from 'lenis'
 import { motion, useScroll, useSpring, useTransform } from 'motion/react'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import MovingThemesCard from '../MovingThemesCard'
 import { GlowingCursor } from '../cursor-glowing-effect/GlowingCursor'
 
@@ -13,25 +10,6 @@ export const FifthSection = () => {
     target: containerRef,
     offset: ['start 0.3', 'end end'],
   })
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.05, // for slower smoother scrolling
-      smoothWheel: true, // smooth scrolling for wheel events
-    })
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    const rafId = requestAnimationFrame(raf)
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      lenis.destroy()
-    }
-  }, [])
 
   // animate the background color from white to black
   const backgroundColor = useTransform(

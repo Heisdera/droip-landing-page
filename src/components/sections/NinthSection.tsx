@@ -1,5 +1,3 @@
-'use client'
-
 import { ninthSectionContents } from '@/data'
 import { cn } from '@/lib/utils'
 import { motion, useInView } from 'motion/react'

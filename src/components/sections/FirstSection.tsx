@@ -1,5 +1,3 @@
-'use client'
-
 import { firstSectionSteps } from '@/data'
 import CharacterRevealHeader from '../CharacterRevealHeader'
 import { StepperImageRevealAccordion } from '../StepperImageRevealAccordion'

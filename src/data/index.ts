@@ -99,7 +99,7 @@ export type gridCard = {
   src?: string
 }
 
-export const Menus: MenuItem[] = [
+export const menus: MenuItem[] = [
   {
     name: 'Home',
   },

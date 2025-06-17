@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { footerSections, socialLinks } from '../../data'
 import { CTAButton } from '../CTAButton'

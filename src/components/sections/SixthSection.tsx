@@ -1,5 +1,3 @@
-'use client'
-
 import { sixthSectionContents } from '@/data'
 
 export const SixthSection = () => {

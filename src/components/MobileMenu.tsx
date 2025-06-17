@@ -1,16 +1,20 @@
 'use client'
 
-import { Menus } from '@/data'
+import { menus } from '@/data'
 import { sidebarVariant } from '@/lib/variants'
-import { AnimatePresence, motion, useCycle } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { MenuToggleButton } from './MenuToggleButton'
 import { MobileMenuItem } from './MobileMenuItem'
 import { Button } from './ui/button'
 import { CTAButton } from './CTAButton'
 
-export const MobileMenu = () => {
-  const [isMenuOpen, toggleMenu] = useCycle(false, true)
+interface MobileMenuProps {
+  isMenuOpen: boolean
+  toggleMenu: () => void
+}
+
+export const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null)
 
   useEffect(() => {
@@ -31,6 +35,7 @@ export const MobileMenu = () => {
 
   return (
     <motion.div
+      data-lenis-prevent
       initial={false}
       animate={isMenuOpen ? 'open' : 'closed'}
       className="w-full"
@@ -71,9 +76,9 @@ export const MobileMenu = () => {
                   duration: 0.2,
                 },
               }}
-              className="contain mx-auto flex w-full flex-col space-y-3 divide-y px-5 pt-3 pb-6"
+              className="contain mx-auto flex min-h-full w-full flex-col gap-5 divide-y px-5 pt-3 pb-6"
             >
-              {Menus.map((menu) => (
+              {menus.map((menu) => (
                 <MobileMenuItem
                   menu={menu}
                   key={menu.name}
@@ -85,7 +90,7 @@ export const MobileMenu = () => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="justify-start rounded-none px-0 text-lg font-semibold hover:bg-transparent hover:text-black"
+                className="h-14 justify-start rounded-none px-0 text-lg font-semibold text-gray-500 hover:bg-transparent hover:text-black"
               >
                 Login
               </Button>

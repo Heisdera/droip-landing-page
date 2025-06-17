@@ -1,5 +1,3 @@
-'use client'
-
 import { useRef } from 'react'
 import { GlowingCursor } from '../cursor-glowing-effect/GlowingCursor'
 import Image from 'next/image'

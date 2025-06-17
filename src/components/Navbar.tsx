@@ -1,11 +1,12 @@
 'use client'
 
-import { Menus } from '@/data'
+import { menus } from '@/data'
 import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
   useScroll,
+  useCycle,
 } from 'motion/react'
 import { useState } from 'react'
 import DesktopMenu from './DesktopMenu'
@@ -17,6 +18,7 @@ import { CTAButton } from './CTAButton'
 export const Navbar = () => {
   const { scrollYProgress } = useScroll()
   const [visible, setVisible] = useState(true)
+  const [isMenuOpen, toggleMenu] = useCycle(false, true)
 
   useMotionValueEvent(scrollYProgress, 'change', (current) => {
     // Check if current is not undefined and is a number
@@ -26,10 +28,15 @@ export const Navbar = () => {
       if (scrollYProgress.get() < 0) {
         setVisible(false)
       } else {
-        if (direction < 0) {
+        // Keep navbar visible when mobile menu is open
+        if (isMenuOpen) {
           setVisible(true)
         } else {
-          setVisible(false)
+          if (direction < 0) {
+            setVisible(true)
+          } else {
+            setVisible(false)
+          }
         }
       }
     }
@@ -56,7 +63,7 @@ export const Navbar = () => {
             <Logo />
 
             <ul className="relative hidden items-center gap-x-5 lg:flex">
-              {Menus.map((menu) => (
+              {menus.map((menu) => (
                 <DesktopMenu menu={menu} key={menu.name} />
               ))}
             </ul>
@@ -68,7 +75,7 @@ export const Navbar = () => {
           </div>
 
           <div className="block lg:hidden">
-            <MobileMenu />
+            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>
         </nav>
       </motion.header>

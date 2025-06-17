@@ -1,28 +1,14 @@
-'use client'
-
 import { thirdSectionContents } from '@/data'
-import Lenis from 'lenis'
 import { useScroll } from 'motion/react'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { ThirdSectionContentCard } from '../ThirdSectionContentCard'
 
 export const ThirdSection = () => {
-  const contentContainer = useRef(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
-    target: contentContainer,
+    target: containerRef,
     offset: ['start start', 'end end'],
   })
-
-  useEffect(() => {
-    const lenis = new Lenis()
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-  }, [])
 
   return (
     <div className="bg-black py-15 lg:py-24">
@@ -31,7 +17,10 @@ export const ThirdSection = () => {
           Scale your business with
         </p>
 
-        <div className="mt-16 mb-[10px] flex flex-col gap-20">
+        <div
+          ref={containerRef}
+          className="mt-16 mb-[10px] flex flex-col gap-20"
+        >
           {thirdSectionContents.map((cardContent, i) => {
             const targetScale = 1 - (thirdSectionContents.length - i) * 0.02
 

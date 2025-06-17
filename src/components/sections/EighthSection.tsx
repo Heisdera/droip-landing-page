@@ -1,5 +1,3 @@
-'use client'
-
 import { eighthSectionIcons } from '@/data'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'

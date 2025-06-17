@@ -7,6 +7,7 @@ import {
 import type { MenuItem } from '@/data'
 import { Dispatch, SetStateAction } from 'react'
 import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 interface MobileMenuItemProps {
   menu: MenuItem
@@ -38,7 +39,7 @@ export const MobileMenuItem = ({
         >
           <AccordionItem value={menu.name} className="py-2">
             <AccordionTrigger
-              className="justify-normal py-1 text-lg leading-6 hover:no-underline"
+              className="justify-normal py-[6px] text-lg leading-6 text-gray-500 hover:text-black hover:no-underline"
               onClick={() => handleAccordionChange(menu.name)}
             >
               {menu.name}
@@ -68,7 +69,10 @@ export const MobileMenuItem = ({
         <Button
           variant="ghost"
           size="lg"
-          className="w-full justify-start px-0 text-lg font-semibold hover:bg-transparent hover:text-black"
+          className={cn(
+            'h-14 w-full justify-start px-0 text-lg font-semibold hover:bg-transparent hover:text-black',
+            menu.name !== 'Home' && 'text-gray-500'
+          )}
         >
           {menu.name}
         </Button>

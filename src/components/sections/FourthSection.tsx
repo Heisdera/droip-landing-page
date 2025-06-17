@@ -1,11 +1,8 @@
-'use client'
-
 import { fourthSectionImages } from '@/data'
-import Lenis from 'lenis'
 import { ChevronRight } from 'lucide-react'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import Link from 'next/link'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import CharacterRevealHeader from '../CharacterRevealHeader'
 import { ScrollResizeAnimation } from '../ScrollResizeAnimation'
 import SpinningCircleIcon from '../SpinningCircleIcon'
@@ -41,24 +38,6 @@ export const FourthSection = () => {
   }, [])
 
   useMotionValueEvent(scrollYProgress, 'change', handleScrollChange)
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.05, // for slower smoother scrolling
-      smoothWheel: true, // smooth scrolling for wheel events
-    })
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
 
   return (
     <div className="bg-white pt-15 lg:pt-24">
