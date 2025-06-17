@@ -1,7 +1,7 @@
 import { PlayCircle } from 'lucide-react'
 import Image from 'next/image'
-import { CTAButton } from './CTAButton'
-import { Button } from './ui/button'
+import { CTAButton } from '@/components/CTAButton'
+import { Button } from '@/components/ui/button'
 
 export const Hero = () => {
   return (

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { MenuToggleButton } from './MenuToggleButton'
 import { MobileMenuItem } from './MobileMenuItem'
 import { Button } from './ui/button'
+import { CTAButton } from './CTAButton'
 
 export const MobileMenu = () => {
   const [isMenuOpen, toggleMenu] = useCycle(false, true)
@@ -89,9 +90,9 @@ export const MobileMenu = () => {
                 Login
               </Button>
 
-              <Button className="mt-2 self-start rounded-xl">
-                Get Started
-              </Button>
+              <div className="mt-2 self-start rounded-xl">
+                <CTAButton text="Get Started" showIcon={false} size="sm" />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

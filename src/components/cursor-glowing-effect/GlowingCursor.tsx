@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react'
 
 export const GlowingCursor = ({
   containerRef,
+  persistGlow = false,
 }: {
   containerRef: React.RefObject<HTMLDivElement | null>
+  persistGlow?: boolean
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(persistGlow)
   const size = 700
 
   useEffect(() => {
@@ -31,7 +33,9 @@ export const GlowingCursor = ({
     }
 
     const handleMouseLeave = () => {
-      setIsVisible(false)
+      if (!persistGlow) {
+        setIsVisible(false)
+      }
     }
 
     container.addEventListener('mousemove', handleMouseMove)
@@ -43,7 +47,7 @@ export const GlowingCursor = ({
       container.removeEventListener('mouseenter', handleMouseEnter)
       container.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [containerRef])
+  }, [containerRef, persistGlow])
 
   return (
     <motion.div

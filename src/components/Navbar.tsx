@@ -12,6 +12,7 @@ import DesktopMenu from './DesktopMenu'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
 import { Button } from './ui/button'
+import { CTAButton } from './CTAButton'
 
 export const Navbar = () => {
   const { scrollYProgress } = useScroll()
@@ -61,9 +62,9 @@ export const Navbar = () => {
             </ul>
           </div>
 
-          <div className="hidden space-x-4 lg:block">
+          <div className="hidden items-center space-x-4 lg:flex">
             <Button variant="ghost">Login</Button>
-            <Button className="rounded-xl">Get Started</Button>
+            <CTAButton text="Get Started" showIcon={false} size="sm" />
           </div>
 
           <div className="block lg:hidden">

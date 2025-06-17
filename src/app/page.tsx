@@ -1,4 +1,4 @@
-import { Hero } from '@/components/Hero'
+import { Hero } from '@/components/sections/Hero'
 import { EighthSection } from '@/components/sections/EighthSection'
 import { FifthSection } from '@/components/sections/FifthSection'
 import { FirstSection } from '@/components/sections/FirstSection'
@@ -8,6 +8,7 @@ import { SecondSection } from '@/components/sections/SecondSection'
 import { SeventhSection } from '@/components/sections/SeventhSection'
 import { SixthSection } from '@/components/sections/SixthSection'
 import { ThirdSection } from '@/components/sections/ThirdSection'
+import { Footer } from '@/components/sections/Footer'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <SeventhSection />
       <EighthSection />
       <NinthSection />
+      <Footer />
     </main>
   )
 }
