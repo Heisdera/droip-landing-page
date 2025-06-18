@@ -1,13 +1,19 @@
 import { eighthSectionIcons } from '@/data'
 import { motion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 export const EighthSection = () => {
   const ref = useRef<HTMLDivElement>(null)
+  const [activeIcon, setActiveIcon] = useState<number | null>(null)
+
   const isInView = useInView(ref, {
     once: true,
     amount: 0.3, // Trigger the animation when 30% of the element is in view
   })
+
+  const handleIconClick = (index: number) => {
+    setActiveIcon(activeIcon === index ? null : index)
+  }
 
   const horizontalLineVariants = {
     hidden: { scaleX: 0 },
@@ -97,9 +103,21 @@ export const EighthSection = () => {
         {eighthSectionIcons.map((Icon, index) => (
           <div
             key={index}
-            className="group/icon flex h-20 items-center justify-center rounded-[18px] bg-[#ebe8ff] transition-all duration-[400ms] ease-in group-hover:blur-[4px] hover:bg-[#ccc5fa] hover:!blur-none sm:h-24 lg:h-28"
+            className={`group/icon flex h-20 cursor-pointer items-center justify-center rounded-[18px] bg-[#ebe8ff] transition-all duration-[400ms] ease-in select-none sm:h-24 lg:h-28 ${
+              activeIcon === index
+                ? 'bg-[#ccc5fa] !blur-none'
+                : 'group-hover:blur-[4px] hover:bg-[#ccc5fa] hover:!blur-none'
+            }`}
+            onClick={() => handleIconClick(index)}
+            onTouchStart={() => handleIconClick(index)}
           >
-            <Icon className="size-9 transition-all duration-[400ms] ease-in-out transform-3d group-hover/icon:scale-125 lg:size-12" />
+            <Icon
+              className={`size-9 transition-all duration-[400ms] ease-in-out transform-3d lg:size-12 ${
+                activeIcon === index
+                  ? 'scale-125'
+                  : 'group-hover/icon:scale-125'
+              }`}
+            />
           </div>
         ))}
       </div>

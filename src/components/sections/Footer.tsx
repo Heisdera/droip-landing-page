@@ -89,7 +89,7 @@ export const Footer = () => {
             <Link
               href="https://raphael-wisdom-portfolio.vercel.app"
               target="_blank"
-              className="ml-auto flex w-fit items-center gap-1 rounded-md bg-[#9354ff] p-[2px] pl-2 sm:col-span-2 sm:ml-0 md:col-span-3 md:ml-auto"
+              className="ml-auto flex w-fit items-center gap-1 rounded-md bg-[#9354ff] p-[2px] pl-2 sm:col-span-2 md:col-span-3"
             >
               <DroipIcon className="size-[22px]" />
               <div className="rounded bg-white px-2 py-[7px] text-sm tracking-normal text-[#501da9]">
@@ -97,7 +97,7 @@ export const Footer = () => {
               </div>
             </Link>
 
-            <div className="col-span-2 row-start-1 text-gray-400 md:col-span-3">
+            <div className="col-span-2 text-gray-400 md:col-span-3 md:row-start-1">
               &copy; {new Date().getFullYear()} Droip. All rights reserved
             </div>
           </div>

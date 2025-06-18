@@ -15,11 +15,12 @@ export const CTAButton = ({
   return (
     <motion.button
       className={cn(
-        'bg-primary flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl px-4 font-semibold text-white',
+        'bg-primary focus-visible:border-ring focus-visible:ring-ring/50 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl px-4 font-semibold text-white select-none focus-visible:ring-[4px]',
         size === 'sm' ? 'h-10' : 'h-11'
       )}
       initial="initial"
       whileHover="hover"
+      whileTap="hover"
       variants={{
         initial: { scaleY: 1, scaleX: 1 },
         hover: { scaleY: 1.12, scaleX: 0.98 },

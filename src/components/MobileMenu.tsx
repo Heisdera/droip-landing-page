@@ -3,7 +3,7 @@
 import { menus } from '@/data'
 import { sidebarVariant } from '@/lib/variants'
 import { AnimatePresence, motion } from 'motion/react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { MenuToggleButton } from './MenuToggleButton'
 import { MobileMenuItem } from './MobileMenuItem'
 import { Button } from './ui/button'
@@ -16,6 +16,7 @@ interface MobileMenuProps {
 
 export const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -26,6 +27,61 @@ export const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
     }
   }, [isMenuOpen])
 
+  // Focus trap effect
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const menuElement = menuRef.current
+    if (!menuElement) return
+
+    // Focus the first focusable element when menu opens
+    const focusableElements = menuElement.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+
+    const firstElement = focusableElements[0] as HTMLElement
+    const lastElement = focusableElements[
+      focusableElements.length - 1
+    ] as HTMLElement
+
+    // Focus first element when menu opens
+    if (firstElement) {
+      firstElement.focus()
+    }
+
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return
+
+      if (e.shiftKey) {
+        // Shift + Tab (going backwards)
+        if (document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement?.focus()
+        }
+      } else {
+        // Tab (going forwards)
+        if (document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        toggleMenu()
+      }
+    }
+
+    document.addEventListener('keydown', handleTabKey)
+    document.addEventListener('keydown', handleEscapeKey)
+
+    return () => {
+      document.removeEventListener('keydown', handleTabKey)
+      document.removeEventListener('keydown', handleEscapeKey)
+    }
+  }, [isMenuOpen, toggleMenu])
+
   const handleToggleMenu = () => {
     toggleMenu()
     if (isMenuOpen) {
@@ -35,6 +91,7 @@ export const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
 
   return (
     <motion.div
+      ref={menuRef}
       data-lenis-prevent
       initial={false}
       animate={isMenuOpen ? 'open' : 'closed'}
@@ -90,7 +147,7 @@ export const MobileMenu = ({ isMenuOpen, toggleMenu }: MobileMenuProps) => {
               <Button
                 variant="ghost"
                 size="lg"
-                className="h-14 justify-start rounded-none px-0 text-lg font-semibold text-gray-500 hover:bg-transparent hover:text-black"
+                className="h-14 justify-start px-0 text-lg font-semibold text-gray-500 hover:bg-transparent hover:text-black"
               >
                 Login
               </Button>
